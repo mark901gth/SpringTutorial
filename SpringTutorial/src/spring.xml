@@ -5,26 +5,28 @@
 
     <bean id="triangle" class="javabrains.Triangle" name="triangle-name">
     
-        <property name="pointA" ref="zeroPoint" />
-        
-        <property name="pointB">
-            <bean class="javabrains.Point">
-                <property name="x" value="-20" />
-                <property name="y" value="0" />
-            </bean>
-        </property>
-        
-        <property name="pointC">
-            <bean class="javabrains.Point">
-                <property name="x" value="20" />
-                <property name="y" value="0" />
-            </bean>
+        <property name="points">
+            <list>
+                <ref bean="zeroPoint" />
+                <ref bean="point2" />
+                <ref bean="point3" />
+            </list>
         </property>
         
     </bean>
     
     <bean id="zeroPoint" class="javabrains.Point">
         <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point2" class="javabrains.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+    
+    <bean id="point3" class="javabrains.Point">
+        <property name="x" value="20" />
         <property name="y" value="0" />
     </bean>
 

@@ -1,47 +1,31 @@
 package javabrains;
 
+import java.util.List;
+
 public class Triangle
 {
 
-    private Point pointA;
-    private Point pointB;
-    private Point pointC;
+    private List<Point> points;
 
-    public Point getPointA()
+
+    public List<Point> getPoints()
     {
-        return pointA;
+        return points;
     }
 
-    public void setPointA(Point pointA)
+
+    public void setPoints(List<Point> points)
     {
-        this.pointA = pointA;
+        this.points = points;
     }
 
-    public Point getPointB()
-    {
-        return pointB;
-    }
-
-    public void setPointB(Point pointB)
-    {
-        this.pointB = pointB;
-    }
-
-    public Point getPointC()
-    {
-        return pointC;
-    }
-
-    public void setPointC(Point pointC)
-    {
-        this.pointC = pointC;
-    }
 
     public void draw()
     {
-        System.out.println( "Point A = (" + getPointA().getX() + " " + getPointA().getY() + ")" );
-        System.out.println( "Point B = (" + getPointB().getX() + " " + getPointB().getY() + ")" );
-        System.out.println( "Point C = (" + getPointC().getX() + " " + getPointC().getY() + ")" );
+        for ( Point point : points )
+        {
+            System.out.printf( "Point = (%3d,%3d)\n", point.getX(), point.getY() );
+        }
     }
 
 }
