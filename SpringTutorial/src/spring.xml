@@ -3,10 +3,24 @@
 
 <beans>
 
-    <bean id="triangle" class="javabrains.Triangle" >
+    <bean id="triangle" class="javabrains.Triangle" name="triangle-name">
+    
         <property name="pointA" ref="zeroPoint" />
-        <property name="pointB" ref="point2" />
-        <property name="pointC" ref="point3" />
+        
+        <property name="pointB">
+            <bean class="javabrains.Point">
+                <property name="x" value="-20" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
+        
+        <property name="pointC">
+            <bean class="javabrains.Point">
+                <property name="x" value="20" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
+        
     </bean>
     
     <bean id="zeroPoint" class="javabrains.Point">
@@ -14,14 +28,6 @@
         <property name="y" value="0" />
     </bean>
 
-    <bean id="point2" class="javabrains.Point">
-        <property name="x" value="-20" />
-        <property name="y" value="0" />
-    </bean>
-
-    <bean id="point3" class="javabrains.Point">
-        <property name="x" value="20" />
-        <property name="y" value="0" />
-    </bean>
-
+    <alias name="triangle" alias="triangle-alias"/>
+    
 </beans>
